@@ -3,6 +3,7 @@ creates views for the songs api
 """
 from django.shortcuts import render
 from .models import Songs
+from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import SongSerializer
@@ -16,7 +17,9 @@ def api_overview(request):
         'song_view': '/song_view',
         'song_list_view': '/song_list_view'
     }
-    return Response(api_urls)
+    # return Response(api_urls)
+    return HttpResponse('Height')
+
 
 @api_view(['GET'])
 def song_view(request, *args, **kwargs):

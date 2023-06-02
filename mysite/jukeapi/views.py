@@ -9,6 +9,9 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import generics, status
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
+import json
+from .prompts import promptfunc
+from .utils import querySongs, preparesongs, get_completion
 
 # Create your views here.
 
@@ -46,3 +49,18 @@ def getRoutes(request):
         '/jukeapi/token/refresh/'
     ]
     return Response(routes)
+
+@api_view(['GET'])
+def recommendations(request):
+    """Get user's recommendations"""
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = promptfunc(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
+
+
