@@ -21,11 +21,15 @@ export const AuthProvider = ({ children }) => {
 
   const history = useHistory();
 
-  const loginUser = async (username, password) => {
+  const loginUser = async (e, username, password) => {
+    e.preventDefault()
+    
+    console.log('Logging in...')
     const response = await fetch("http://127.0.0.1:8000/jukeapi/token/", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        
       },
       body: JSON.stringify({
         username,
@@ -38,7 +42,8 @@ export const AuthProvider = ({ children }) => {
       setAuthTokens(data);
       setUser(jwt_decode(data.access));
       localStorage.setItem("authTokens", JSON.stringify(data));
-      history.push("/");
+      history.push("/enter");
+      console.log(data)
     } else {
       alert("Something went wrong!");
     }
@@ -70,6 +75,12 @@ export const AuthProvider = ({ children }) => {
     history.push("/");
   };
 
+  const logoutUserSafe = () => {
+    history.push('/');
+  }
+  
+  const carry = "Spotify API is active"
+
   const contextData = {
     user,
     setUser,
@@ -77,7 +88,9 @@ export const AuthProvider = ({ children }) => {
     setAuthTokens,
     registerUser,
     loginUser,
-    logoutUser
+    logoutUser,
+    carry,
+    logoutUserSafe
   };
 
   useEffect(() => {
@@ -89,7 +102,8 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={contextData}>
-      {loading ? null : children}
+      { children}
     </AuthContext.Provider>
   );
 };
+//loading ? null : children
