@@ -13,5 +13,4 @@ urlpatterns = [
     path('register/', views.RegisterView.as_view(), name='auth_register'),
     path('test/', views.test_endpoint, name='test_endpoint'),
     path('', views.getRoutes),
-    path('redirect', views.spotify_callback, name='spotify_callback')
 ]

@@ -8,9 +8,9 @@ from datetime import timedelta
 
 load_dotenv()
 
-REDIRECT_URI = os.getenv('REDIRECT_URI')
-CLIENT_ID = os.getenv('CLIENT_ID')
-CLIENT_SECRET = os.getenv('CLIENT_SECRET')
+REDIRECT_URI = 'http://127.0.0.1:8000/jukeapi/redirect'
+CLIENT_ID = '6ab1ff6d77d64b2899565b631f1d6572'
+CLIENT_SECRET = '94b0df929d3947f9b09d76ec962b649c'
 
 
 def check_spotify_token_exists(user):

@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
     e.preventDefault()
     
     console.log('Logging in...')
-    const response = await fetch("http://127.0.0.1:8000/jukeapi/token/", {
+    const response = await fetch("http://127.0.0.1:8000/spotify/spotify_token/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,9 +1,5 @@
 from django.contrib import admin
+from .models import Jukeuser
 
 # Register your models here.
-from .models import SpotifyToken
- 
-@admin.register(SpotifyToken)
-class Spotifydata(admin.ModelAdmin):
-  list_display = [field.name for field in
-SpotifyToken._meta.get_fields()]
+admin.site.register(Jukeuser)

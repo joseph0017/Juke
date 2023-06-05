@@ -21,7 +21,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('juke/', include('juke.urls')),
-    path('jukeapi/', include('jukeapi.urls'))
+    path('jukeapi/', include('jukeapi.urls')),
+    path('spotify/', include('spotify.urls'))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
