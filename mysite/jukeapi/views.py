@@ -11,11 +11,17 @@ from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from requests import Request, post
 from urllib.parse import urlencode
-from .utils import REDIRECT_URI, CLIENT_ID, CLIENT_SECRET, \
-update_create_user_tokens
+from .utils import REDIRECT_URI, CLIENT_ID, CLIENT_SECRET, update_create_user_tokens
 from django.core.cache import cache
+
+
 # Create your views here.
 
+class RegisterView(generics.CreateAPIView):
+    """creates the registration view"""
+    queryset = User.objects.all()
+    permission_classes = (AllowAny,)
+    serializer_class = RegisterSerializer
 
 
 class MyTokenObtainPairView(TokenObtainPairView):
@@ -35,8 +41,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
                 'client_id': CLIENT_ID
             }
             url = Request('GET', endpoint, params=params).prepare().url
-            # Redirect the user to a specified URL
-            # return redirect('https://accounts.spotify.com/api/token')
+            
             response_data = {
                 'access_token': response.data['access'],
                 'refresh_token': response.data['refresh'],
@@ -53,7 +58,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 def spotify_callback(request, format=None):
 
     code = request.GET.get('code')
-    error = request.GET.get('error')
+    # error = request.GET.get('error')
     
     data = {
         'grant_type': 'authorization_code',
@@ -83,15 +88,9 @@ def spotify_callback(request, format=None):
     
     redirect_url = 'http://localhost:3000/enter?' + urlencode(frontend_data)
     cache.set('username', '')
-    # # redirect it to the proper view
-    # # since I didn't define the 
+     
     return redirect(redirect_url)
 
-class RegisterView(generics.CreateAPIView):
-    """creates the registration view"""
-    queryset = User.objects.all()
-    permission_classes = (AllowAny,)
-    serializer_class = RegisterSerializer
 
 
 @api_view(['GET', 'POST'])

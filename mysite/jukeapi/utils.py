@@ -1,7 +1,4 @@
 import os
-import json
-import openai
-import requests
 from dotenv import load_dotenv
 from .models import SpotifyToken
 from django.contrib.auth.models import User
