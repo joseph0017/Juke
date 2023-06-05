@@ -39,11 +39,17 @@ export const AuthProvider = ({ children }) => {
     const data = await response.json();
 
     if (response.status === 200) {
-      setAuthTokens(data);
-      setUser(jwt_decode(data.access));
-      localStorage.setItem("authTokens", JSON.stringify(data));
-      history.push("/enter");
-      console.log(data)
+      let tokens = {
+        'access': data.access_token,
+        'refresh_token': data.refresh_token
+      }
+      let url = data.url
+      setAuthTokens(tokens);
+      setUser(jwt_decode(tokens.access));
+      localStorage.setItem("authTokens", JSON.stringify(tokens));
+      // history.push("/enter");
+      
+      window.location.replace(url)
     } else {
       alert("Something went wrong!");
     }

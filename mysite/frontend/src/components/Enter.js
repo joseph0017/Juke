@@ -1,8 +1,14 @@
 import React, { useState, useContext } from 'react';
 import AuthContext from '../context/AuthContext';
 import { Redirect } from 'react-router-dom';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Enter = () => {
+    const location = useLocation()
+    const params = new URLSearchParams(location.search)
+    const spotify_access_key = params.get('spotify_access_token')
+
+    console.log('spotify token na', spotify_access_key)
 
     let {carry, user, logoutUserSafe} = useContext(AuthContext)
     //const [status, setStatus] = useState('');
