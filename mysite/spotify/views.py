@@ -32,7 +32,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
         response = super().post(request, *args, **kwargs)
         
         if response.status_code == 200:
-            scopes = 'user-read-playback-state user-modify-playback-state user-read-currently-playing streaming'
+            scopes = 'streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state'
             endpoint = 'https://accounts.spotify.com/authorize'
             params= {
                 'scope': scopes,
@@ -86,7 +86,7 @@ def spotify_callback(request, format=None):
         'spotify_refresh_token': refresh_token
     }
     
-    redirect_url = 'http://localhost:3000/enter?' + urlencode(frontend_data)
+    redirect_url = 'http://localhost:3000/music?' + urlencode(frontend_data)
     cache.set('username', '')
      
     return redirect(redirect_url)
