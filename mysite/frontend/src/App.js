@@ -9,11 +9,13 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProtectedPage from "./pages/ProtectedPage";
+import Player from "./components/Player";
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen overflow-hidden">
+      <Route component={Player} path="/play" />
         <AuthProvider>
           <Navbar />
           <Switch>
@@ -21,6 +23,7 @@ function App() {
             <Route component={Login} path="/login" />
             <Route component={Register} path="/register" />
             <Route component={Home} path="/" />
+            
           </Switch>
         </AuthProvider>
         <Footer />
