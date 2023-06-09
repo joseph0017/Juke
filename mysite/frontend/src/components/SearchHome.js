@@ -1,8 +1,10 @@
 import axios from 'axios';
 import {useState} from 'react';
+import Player from './Player';
 export default function SearchHome() {
 	const [term, setTerm] = useState(null);
 	const [response, setResponse] = useState(null);
+	const [res, setRes] = useState(null);
 	const getSearchResults = async () => {
 		try {
 			const res = await axios({
@@ -15,10 +17,11 @@ export default function SearchHome() {
                   "term": term,
                   "locale":"en-US",
                   "offset":"0",
-                  "limit":"20"
+                  "limit":"1"
                 }
               })
 			const {data} = res;
+			setRes(data)
 			setResponse(data.tracks.hits);
             console.log(data)
 		} catch (error) {
@@ -88,11 +91,13 @@ export default function SearchHome() {
 										</div>
 									</div>
 								</div>
+								<Player song = {song} res = {res} music = {response} />
 							</div>
 						))}
 					</div>
 				</div>
 			)}
+			
 		</div>
 	);
 }

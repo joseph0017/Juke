@@ -10,14 +10,15 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProtectedPage from "./pages/ProtectedPage";
 import Player from "./components/Player";
+import Sound from "./components/Sound";
 import SearchHome from "./components/SearchHome";
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen overflow-hidden">
-      <Route component={SearchHome} path="/search" />
-      <Route component={Player} path="/play" />
+      <Route component={SearchHome} path="/play" />
+      <Route component={Sound} path="/sou" />
         <AuthProvider>
           <Navbar />
           <Switch>
