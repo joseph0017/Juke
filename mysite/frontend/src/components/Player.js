@@ -2,17 +2,13 @@ import React, { useState, useRef } from 'react'
 import DisplayTrack from './DisplayTrack'
 import Controls from './Controls'
 import ProgressBar from './ProgressBar'
-import { tracks } from '../data/track'
 import '../styles/index.css';
 
-const Player = ({song, res, music}) => {
+const Player = ({music}) => {
     const [timeProgress, setTimeProgress] = useState(0);
     const [duration, setDuration] = useState(0);
     const [trackIndex, setTrackIndex] = useState(0);
     const [currentTrack, setCurrentTrack] = useState(music[trackIndex]);
-
-    console.log('the song is in the player component', song)
-    console.log('looking for current track', currentTrack)
 
     //ref
     const audioRef = useRef()

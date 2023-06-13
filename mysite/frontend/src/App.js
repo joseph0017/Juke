@@ -8,21 +8,19 @@ import { AuthProvider } from "./context/AuthContext";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import ProtectedPage from "./pages/ProtectedPage";
-import Player from "./components/Player";
-import Sound from "./components/Sound";
-import SearchHome from "./components/SearchHome";
+import Music from "./pages/Music";
+import About from "./pages/About";
 
 function App() {
   return (
+    
     <Router>
       <div className="flex flex-col min-h-screen overflow-hidden">
-      <Route component={SearchHome} path="/play" />
-      <Route component={Sound} path="/sou" />
         <AuthProvider>
           <Navbar />
           <Switch>
-            <PrivateRoute component={ProtectedPage} path="/protected" exact />
+            <PrivateRoute component={Music} path="/music" exact />
+            <Route component={About} path="/about" />
             <Route component={Login} path="/login" />
             <Route component={Register} path="/register" />
             <Route component={Home} path="/" />
