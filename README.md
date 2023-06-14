@@ -1,6 +1,6 @@
 Juke - Your Ultimate Music Experience
 
-<img src="img/ScreenShot-Juke.png" alt="ScreenShot-Juke">
+<img src="img/ScreenShot%20-Juke.png" alt="">
 
 <p><a href="https://64893a1e56f52656df5f3b48--glittering-hamster-af20a4.netlify.app/">Visit Juke!</a></p>
 
