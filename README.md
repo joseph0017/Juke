@@ -50,7 +50,7 @@ Launch the Juke app locally:
 
 bash
 Copy code
-npm
+npm start
 
 Usage
 Register/Sign in
