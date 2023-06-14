@@ -53,7 +53,7 @@ export default function Music() {
 				</div>
 			</div>
 			{response && (
-				<div className="mt-16">
+				<div className="mt-16 flex justify-end ">
 					<h3 className="text-secondary text-2xl">Search Results</h3>
 					<div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 						{response.map(song => (

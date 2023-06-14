@@ -7,7 +7,7 @@ const Hero = () => {
         <div class="items-center lg:flex">
             <div class="w-full lg:w-1/2">
                 <div class="lg:max-w-lg">
-                    <h1 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Best place to listen <br /><span class="text-blue-500 ">Music</span></h1>
+                    <h1 class="text-6xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Best place to listen music <br /><span class="text-blue-500 ">Juke</span></h1>
                     
                     <p class="mt-3 text-gray-600 dark:text-gray-400">
                     Unleash the power of our state-of-the-art 
@@ -22,7 +22,7 @@ const Hero = () => {
             </div>
 
             <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
-                <img class="w-full h-full lg:max-w-3xl" src={robot} alt="Machine" />
+                <img class="lg:max-w-3xl" src={robot} alt="Machine" />
             </div>
         </div>
     </div>
