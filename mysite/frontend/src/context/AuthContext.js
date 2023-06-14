@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
   const history = useHistory();
 
   const loginUser = async (username, password) => {
-    const response = await fetch("http://joey00017.pythonanywhere.com/jukeapi/token/", {
+    const response = await fetch("https://joey00017.pythonanywhere.com/jukeapi/token/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
   };
   
   const registerUser = async (username, password, password2) => {
-    const response = await fetch("http://joey00017.pythonanywhere.com/jukeapi/register/", {
+    const response = await fetch("https://joey00017.pythonanywhere.com/jukeapi/register/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
