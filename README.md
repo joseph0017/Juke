@@ -27,9 +27,9 @@ Juke is not just about music; it's about connecting with others who share your l
 Meet the Developers
 Juke was brought to life by a talented team of developers who are passionate about music and technology. Let's meet the masterminds behind Juke:
 
-Dike Nnamaka - Joseph is a seasoned software engineer with a deep understanding of user experience design. He has a knack for developing intuitive and visually appealing applications that leave a lasting impression. <p><a href="https://www.linkedin.com/in/dike-nnamaka/">Visit Linkedin!</a></p>
+Dike Nnamaka - Dike is a seasoned Machine Learning/software engineer with a deep understanding of user experience design. He has a knack for developing intuitive and visually appealing applications that leave a lasting impression. <p><a href="https://www.linkedin.com/in/dike-nnamaka/">Visit Linkedin!</a></p>
 
-Joseph Ogiku - Dike is a music aficionado and a skilled backend developer. With his expertise in building scalable and efficient systems, Dike ensures that Juke's backend infrastructure runs smoothly, delivering a seamless music streaming experience. <p><a href="https://www.linkedin.com/in/joseph-ogiku/">Visit Linkedin!</a></p>
+Joseph Ogiku - Joseph is a music aficionado and a skilled backend developer. With his expertise in building scalable and efficient systems, Dike ensures that Juke's backend infrastructure runs smoothly, delivering a seamless music streaming experience. <p><a href="https://www.linkedin.com/in/joseph-ogiku/">Visit Linkedin!</a></p>
 
 Annah Nokutheza Mwanza - Annah is a frontend wizard with an eye for detail. Her expertise in crafting captivating user interfaces and optimizing performance guarantees that Juke's user experience is nothing short of exceptional. <p><a href="https://www.linkedin.com/in/annah-nokutheza-mwanza-0266a9270/">Visit Linkedin!</a></p>
 
