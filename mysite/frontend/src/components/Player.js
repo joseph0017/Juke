@@ -28,16 +28,6 @@ const Player = ({music}) => {
     return (
         <>
         <div className="audio-player">
-            <div className="inner">Audio player content</div>
-
-            <DisplayTrack 
-            currentTrack = {currentTrack} 
-            musics = {music}
-            audioRef = {audioRef} 
-            setDuration = {setDuration}
-            progressBarRef = {progressBarRef}
-            handleNext = {handleNext}
-            />
 
             <Controls 
             audioRef = {audioRef} 
@@ -50,6 +40,16 @@ const Player = ({music}) => {
             setCurrentTrack = {setCurrentTrack}
             handleNext = {handleNext}
             />
+
+            <DisplayTrack 
+            currentTrack = {currentTrack} 
+            musics = {music}
+            audioRef = {audioRef} 
+            setDuration = {setDuration}
+            progressBarRef = {progressBarRef}
+            handleNext = {handleNext}
+            />
+
 
             <ProgressBar 
             progressBarRef = {progressBarRef}  
