@@ -4,7 +4,6 @@ import Player from '../components/Player';
 export default function Music() {
 	const [term, setTerm] = useState(null);
 	const [response, setResponse] = useState(null);
-	const [res, setRes] = useState(null);
 	const getSearchResults = async () => {
 		try {
 			const res = await axios({
@@ -17,11 +16,10 @@ export default function Music() {
                   "term": term,
                   "locale":"en-US",
                   "offset":"0",
-                  "limit":"1"
+                  "limit":"5"
                 }
               })
 			const {data} = res;
-			setRes(data)
 			setResponse(data.tracks.hits);
             console.log(data)
 		} catch (error) {
@@ -80,21 +78,14 @@ export default function Music() {
 											<span className="mt-2 mb-4 max-w-xs text-sm text-secondary block">
 												{song.track.subtitle}
 											</span>
-											<a
-												className="mt-5 text-sm text-active"
-												href={song.track.url}
-											>
-												{song.track.hub.actions.map((musics) => (
-                                                    musics.uri
-                                                ))}
-											</a>
 										</div>
 									</div>
 								</div>
-								<Player music = {response} />
+								
 							</div>
 						))}
 					</div>
+					<Player music = {response} />
 				</div>
 			)}
 			

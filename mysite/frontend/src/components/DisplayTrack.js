@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/index.css';
 
 
-const DisplayTrack = ({currentTrack, audioRef, setDuration, progressBarRef, handleNext, musics}) => {
+const DisplayTrack = ({currentTrack, audioRef, setDuration, progressBarRef, handleNext}) => {
 
     const onLoadedMetadata = () => {
         //console.log(audioRef.current.duration);
@@ -14,32 +14,30 @@ const DisplayTrack = ({currentTrack, audioRef, setDuration, progressBarRef, hand
     console.log('where is the current track',currentTrack)
 
     return (
-      <>
-        {musics.map((music) => (   
-        <div key = {music.track.key}>
-          {music.track.hub.actions.map((sounds) => (
-            <audio key = {sounds.uri}
-            src = {sounds.uri}
+      <>  
+        <div key = {currentTrack.track.key}>
+
+            <audio
+            src = {currentTrack.track.hub.actions[1].uri}
             ref = {audioRef} 
             onLoadedMetadata={onLoadedMetadata} 
             onEnded={handleNext}
             />
-          ))}
             
-              <div className="audio-info" key = {music.track.key}>
+              <div className="audio-info">
               <div className="audio-image">
                 <img 
-                src = {music.track.images.coverart}
-                alt = {music.track.title}
+                src = {currentTrack.track.images.coverart}
+                alt = {currentTrack.track.title}
                 />
               </div>
               <div className="text">
-                <p className="title">{music.track.title}</p>
-                <p>{music.track.subtitle}</p>
+                <p className="title">{currentTrack.track.title}</p>
+                <p>{currentTrack.track.subtitle}</p>
               </div>
             </div>     
         </div>
-        ))} 
+
         </>
     )
 }
