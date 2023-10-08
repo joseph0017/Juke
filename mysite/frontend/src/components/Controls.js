@@ -50,6 +50,8 @@ const Controls = ({
     playAnimationRef.current = requestAnimationFrame(repeat);
   }, [audioRef, duration, progressBarRef, setTimeProgress]);
 
+  
+
   useEffect(() => {
     if (isPlaying) {
       audioRef.current.play();
@@ -122,7 +124,7 @@ const Controls = ({
           value={volume}
           onChange={(e) => setVolume(e.target.value)}
           style={{
-            background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`,
+            background: `linear-gradient(to right, #d6b7e1 ${volume}%, #ccc ${volume}%)`,
           }}
         />
       </div>

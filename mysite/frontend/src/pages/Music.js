@@ -4,7 +4,11 @@ import Player from '../components/Player';
 export default function Music() {
 	const [term, setTerm] = useState(null);
 	const [response, setResponse] = useState(null);
+	const [selectedTrack, setSelectedTrack] = useState(null);
+	const [isLoading, setIsLoading] = useState(false);
+
 	const getSearchResults = async () => {
+		setIsLoading(true);
 		try {
 			const res = await axios({
                 "method":"GET",
@@ -25,38 +29,35 @@ export default function Music() {
 		} catch (error) {
 			console.log(error);
 		}
+		setIsLoading(false);
 	};
 	return (
 		<div className="flex flex-col relative bg-background font-raleway items-center min-h-screen ">
-			<h1 className="text-6xl text-primary font-bold mt-20">
-				Music <span className="text-active">App</span>
-			</h1>
-			<h2 className="text-active text-2xl mt-6">
-				Discover music using the Shazam API from RapidAPI Hub.
-			</h2>
 			<div className="mt-12 sm:mx-auto justify-center sm:w-full sm:flex">
 				<input
 					type="text"
-					className="block w-1/3 border border-transparent rounded-md px-5 py-3 text-base text-background shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-active"
+					className="block w-screen border-2 border-fuchsia-100 rounded-md px-5 py-3 text-base text-background shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-active md:w-2/3"
 					placeholder="Search for a song or an artist"
 					onChange={e => setTerm(e.target.value)}
 				/>
 				<div className="mt-4 sm:mt-0 sm:ml-3">
 					<button
-						className="block w-full rounded-md px-5 py-3 bg-active text-base font-medium text-primary focus:outline-none focus:ring-2 focus:ring-primary sm:px-10"
+						className="w-full border-2 border-fuchsia-100 px-5 py-2 mt- text-sm tracking-wider text-black uppercase transition-colors duration-300 transform bg-fuchsia-300 rounded-full lg:w-auto hover:bg-fuchsia-100 focus:outline-none focus:bg-fuchsia-100"
 						onClick={() => getSearchResults()}
 					>
 						Search
 					</button>
 				</div>
 			</div>
-			{response && (
+			{ isLoading ? (
+				<svg class="animate-spin h-5 w-5 mr-3 mt-20 bg-fuchsia-600" viewBox="0 0 24 24"></svg>
+			) : response && (
 				<>
-				<div className="mt-16 flex justify-end ">
-					<h3 className="text-secondary text-2xl">Search Results</h3>
+				<div className="mt-16 grid ">
+					<h3 className="text-secondary text-2xl flex justify-center">Found some songs for you &#128578;</h3>
 					<div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 						{response.map(song => (
-							<div key={song.track.key} className="pt-6">
+							<div key={song.track.key} className="pt-6" onClick={() => setSelectedTrack(song)}>
 								<div className="flow-root bg-light rounded-lg px-4 pb-8">
 									<div className="-mt-6">
 										<div className="flex items-center justify-center">
@@ -88,7 +89,7 @@ export default function Music() {
 					</div>
 					
 				</div>
-				<Player music = {response} />
+				<Player music = {response} selectedTrack= {selectedTrack} />
 				</>
 			)}
 			

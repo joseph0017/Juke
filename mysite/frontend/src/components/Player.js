@@ -3,18 +3,21 @@ import DisplayTrack from './DisplayTrack'
 import Controls from './Controls'
 import ProgressBar from './ProgressBar'
 import '../styles/index.css';
+import { useEffect } from 'react';
 
-const Player = ({music}) => {
+const Player = ({music, selectedTrack}) => {
     const [timeProgress, setTimeProgress] = useState(0);
     const [duration, setDuration] = useState(0);
     const [trackIndex, setTrackIndex] = useState(0);
     const [currentTrack, setCurrentTrack] = useState(music[trackIndex]);
 
+   
     //ref
     const audioRef = useRef()
     console.log(audioRef)
 
     const progressBarRef = useRef()
+    
 
       const handleNext = () => {
         if (trackIndex >= music.length - 1) {
@@ -25,6 +28,13 @@ const Player = ({music}) => {
             setCurrentTrack(music[trackIndex + 1]);
         }
     };
+
+    useEffect(() => {
+  if (selectedTrack) {
+    setCurrentTrack(selectedTrack);
+  }
+}, [selectedTrack]);
+
     return (
         <>
         <div className="audio-player">
