@@ -1,6 +1,8 @@
 import axios from 'axios';
 import {useState} from 'react';
 import Player from '../components/Player';
+import { motion } from 'framer-motion';
+
 export default function Music() {
 	const [term, setTerm] = useState(null);
 	const [response, setResponse] = useState(null);
@@ -31,6 +33,21 @@ export default function Music() {
 		}
 		setIsLoading(false);
 	};
+
+	const animateCards = {
+		hidden: {
+          opacity: 0,
+      },
+      visible: {
+          opacity: 1,
+
+      transition: {
+        type: 'tween',
+          delay: 1,
+          duration: 1.4
+      }
+    }
+	}
 	return (
 		<div className="flex flex-col relative bg-background font-raleway items-center min-h-screen ">
 			<div className="mt-12 sm:mx-auto justify-center sm:w-full sm:flex">
@@ -57,7 +74,16 @@ export default function Music() {
 					<h3 className="text-secondary text-2xl flex justify-center text-white">Found some songs for you &#128578;</h3>
 					<div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 						{response.map(song => (
-							<div key={song.track.key} className="pt-6 cursor-pointer" onClick={() => setSelectedTrack(song)}>
+							<motion.div key={song.track.key} className="pt-6 cursor-pointer" onClick={() => setSelectedTrack(song)}
+							variants = {animateCards}
+							initial = "hidden"
+							animate = "visible"
+							whileHover =  {{
+								scale: 1.1,
+								boxShadow: "0px 0px 10px rgb(100,100,100)"
+							}}
+
+							>
 								<div className="flow-root bg-black rounded-lg px-4 pb-8">
 									<div className="mt-6">
 										<div className="flex items-center justify-center">
@@ -85,7 +111,7 @@ export default function Music() {
 									</div>
 								</div>
 								
-							</div>
+							</motion.div>
 						))}
 					</div>
 					

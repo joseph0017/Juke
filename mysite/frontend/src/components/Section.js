@@ -32,7 +32,7 @@ const Section = () => {
           </p>
         </div>
         {/* Third Feature */}
-        <div className='flex-col my-11 items-center  '>
+        <div className='flex-col mt-11 items-center md-[768px]:mr-4  '>
           <div className='flex-col space-y-6 justify-evenly'>
             <div className='flex justify-center'>
               <img className='object-cover my-0 h-16 w-20 bg-white' src={Sub} alt='' />
