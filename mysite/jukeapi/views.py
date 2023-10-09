@@ -64,3 +64,31 @@ def recommendations(request):
     return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def happy(request):
+    pass
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def sad(request):
+    pass
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def moody(request):
+    pass
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def joyful(request):
+    pass
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def sleepy(request):
+    pass
+
