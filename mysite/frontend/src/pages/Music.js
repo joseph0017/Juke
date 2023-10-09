@@ -58,18 +58,19 @@ export default function Music() {
 					<div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 						{response.map(song => (
 							<div key={song.track.key} className="pt-6 cursor-pointer" onClick={() => setSelectedTrack(song)}>
-								<div className="flow-root bg-light rounded-lg px-4 pb-8">
-									<div className="-mt-6">
+								<div className="flow-root bg-fuchsia-50 rounded-lg px-4 pb-8">
+									<div className="mt-6">
 										<div className="flex items-center justify-center">
-											<span className="p-3 rounded-md shadow-lg">
+											<span className="p-3 rounded-md shadow-2xl">
 												<img
 													src={
 														song.track.images
 															.coverart
 													}
-													width={140}
-													height={140}
+													width={200}
+													height={200}
 													alt={song.track.title}
+													className='rounded-lg'
 												/>
 											</span>
 										</div>
@@ -89,6 +90,9 @@ export default function Music() {
 					</div>
 					
 				</div>
+				<br />
+				<br />
+				<br />
 				<Player music = {response} selectedTrack= {selectedTrack} />
 				</>
 			)}
