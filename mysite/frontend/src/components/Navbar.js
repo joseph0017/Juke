@@ -74,12 +74,6 @@ const Navbar = () => {
                       About
                     </Link>
                     </li>
-                    <li className="text-gray-600">
-                    <Link className="border-b-2 border-transparent hover:text-fuchsia-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-fuchsia-300 mx-1.5 sm:mx-6 text-base" to="/contact">
-                      Contact
-                    </Link>
-                    </li>
-
                     { user ? (
             <>
          <div className='inline-flex sm:text-base pt-4 md:pt-0 lg:pl-48 lg:pr-16 '>

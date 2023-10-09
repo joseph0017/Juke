@@ -24,9 +24,9 @@ const Section = () => {
             <div className='flex justify-center'>
               <img className='object-cover my-0 h-16 w-20' src={Recom} alt='' />
             </div>
-            <h1 className='font-bold text-2xl font-sans text-center'>MUSIC RECOMMENDATION</h1>
+            <h1 className='font-bold text-2xl text-center'>MUSIC RECOMMENDATION</h1>
           </div>
-          <p className=' pt-4 font-sans text-2xl  text-left'>
+          <p className=' pt-4 text-2xl  text-left'>
             Discover personalized music suggestions tailored to your unique taste, expanding your musical horizons and introducing you to new songs, artists, and playlists that
             resonate with you.
           </p>
@@ -37,9 +37,9 @@ const Section = () => {
             <div className='flex justify-center'>
               <img className='object-cover my-0 h-16 w-20' src={Sub} alt='' />
             </div>
-            <h1 className='font-bold text-2xl font-sans text-center'>NO SUBSCRIPTION</h1>
+            <h1 className='font-bold text-2xl text-center'>NO SUBSCRIPTION</h1>
           </div>
-          <p className=' pt-4 font-sans text-2xl text-left '>
+          <p className=' pt-4 text-2xl text-left '>
             Experience premium music features without paying for subscriptions, offering a cost-effective solution for music lovers to enjoy high-quality music without financial
             obligations
           </p>

@@ -15,11 +15,11 @@ const Hero = () => {
           <div className='lg:max-w-lg'>
             <h1 className='text-6xl font-semibold text-gray-800 dark:text-white lg:text-7xl'>DISCOVER A NEW WORLD <br /><span className='text-fuchsia-500 '>Juke</span></h1>
             <br />
-            <p className='mt-3 leading-9 text-gray-600 dark:text-gray-400 md:text-2xl md:tracking-wide'>
+            <p className='mt-3 leading-9 md:text-2xl md:tracking-wide'>
               Unleash the power of our state-of-the-art Recommendation System to explore music tailored to your taste, creating a personalized musical journey
             </p>
             <Link to='/music'>
-            <button className='w-full border-2 border-fuchsia-950 px-5 py-2 mt-6 text-sm tracking-wider text-black uppercase transition-colors duration-300 transform bg-fuchsia-600 rounded-full lg:w-auto hover:bg-fuchsia-500 focus:outline-none focus:bg-fuchsia-500'>
+            <button className='border-2 border-fuchsia-100 mt-10 px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-fuchsia-500 rounded-full hover:bg-fuchsia-400 focus:outline-none focus:ring focus:ring-fuchsia-300 focus:ring-opacity-50'>
               Listen Now
             </button>
             </Link>

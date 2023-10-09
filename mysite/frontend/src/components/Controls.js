@@ -39,18 +39,18 @@ const Controls = ({
   const playAnimationRef = useRef();
 
   const repeat = useCallback(() => {
-    const currentTime = audioRef.current.currentTime;
-    setTimeProgress(currentTime);
-    progressBarRef.current.value = currentTime;
-    progressBarRef.current.style.setProperty(
-      '--range-progress',
-      `${(progressBarRef.current.value / duration) * 100}%`
-    );
+    if (audioRef.current) {
+        const currentTime = audioRef.current.currentTime;
+        setTimeProgress(currentTime);
+        progressBarRef.current.value = currentTime;
+        progressBarRef.current.style.setProperty(
+          '--range-progress',
+          `${(progressBarRef.current.value / duration) * 100}%`
+        );
+    }
 
     playAnimationRef.current = requestAnimationFrame(repeat);
-  }, [audioRef, duration, progressBarRef, setTimeProgress]);
-
-  
+}, [audioRef, duration, progressBarRef, setTimeProgress]);
 
   useEffect(() => {
     if (isPlaying) {
@@ -58,7 +58,8 @@ const Controls = ({
     } else {
       audioRef.current.pause();
     }
-    playAnimationRef.current = requestAnimationFrame(repeat);
+    playAnimationRef.current = requestAnimationFrame(repeat)
+    
   }, [isPlaying, audioRef, repeat]);
 
   const skipForward = () => {

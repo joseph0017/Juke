@@ -15,6 +15,7 @@ const Player = ({music, selectedTrack}) => {
     //ref
     const audioRef = useRef()
     console.log(audioRef)
+    
 
     const progressBarRef = useRef()
     

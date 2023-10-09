@@ -50,14 +50,14 @@ export default function Music() {
 				</div>
 			</div>
 			{ isLoading ? (
-				<svg class="animate-spin h-5 w-5 mr-3 mt-20 bg-fuchsia-600" viewBox="0 0 24 24"></svg>
+				<svg className="animate-spin h-5 w-5 mr-3 mt-20 bg-fuchsia-600" viewBox="0 0 24 24"></svg>
 			) : response && (
 				<>
 				<div className="mt-16 grid ">
 					<h3 className="text-secondary text-2xl flex justify-center">Found some songs for you &#128578;</h3>
 					<div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 						{response.map(song => (
-							<div key={song.track.key} className="pt-6" onClick={() => setSelectedTrack(song)}>
+							<div key={song.track.key} className="pt-6 cursor-pointer" onClick={() => setSelectedTrack(song)}>
 								<div className="flow-root bg-light rounded-lg px-4 pb-8">
 									<div className="-mt-6">
 										<div className="flex items-center justify-center">
