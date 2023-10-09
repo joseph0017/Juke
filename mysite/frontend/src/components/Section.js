@@ -10,11 +10,11 @@ const Section = () => {
         <div className='flex-col items-center md-[768px]:mx-4 '>
           <div className='flex-col space-y-6 justify-evenly'>
             <div className='flex justify-center'>
-              <img className='object-cover my-0 h-16 w-20' src={Play} alt='' />
+              <img className='object-cover my-0 h-16 w-20 bg-white' src={Play} alt='' />
             </div>
-            <h1 className='font-bold text-2xl font-sans text-center'>PLAY MUSIC</h1>
+            <h1 className='font-bold text-2xl font-sans text-center text-white'>PLAY MUSIC</h1>
           </div>
-          <p className=' pt-4 font-sans text-2xl  text-left'>
+          <p className=' pt-4 font-sans text-2xl  text-left text-white'>
             Dive into a world of instant musical enjoyment as you effortlessly access and indulge in your favorite tracks anytime, anywhere.
           </p>
         </div>
@@ -22,11 +22,11 @@ const Section = () => {
         <div className='flex-col mt-11 items-center md-[768px]:mr-4 '>
           <div className='flex-col space-y-6 justify-evenly'>
             <div className='flex justify-center'>
-              <img className='object-cover my-0 h-16 w-20' src={Recom} alt='' />
+              <img className='object-cover my-0 h-16 w-20 bg-white' src={Recom} alt='' />
             </div>
-            <h1 className='font-bold text-2xl text-center'>MUSIC RECOMMENDATION</h1>
+            <h1 className='font-bold text-2xl text-center text-white'>MUSIC RECOMMENDATION</h1>
           </div>
-          <p className=' pt-4 text-2xl  text-left'>
+          <p className=' pt-4 text-2xl  text-left text-white'>
             Discover personalized music suggestions tailored to your unique taste, expanding your musical horizons and introducing you to new songs, artists, and playlists that
             resonate with you.
           </p>
@@ -35,11 +35,11 @@ const Section = () => {
         <div className='flex-col my-11 items-center  '>
           <div className='flex-col space-y-6 justify-evenly'>
             <div className='flex justify-center'>
-              <img className='object-cover my-0 h-16 w-20' src={Sub} alt='' />
+              <img className='object-cover my-0 h-16 w-20 bg-white' src={Sub} alt='' />
             </div>
-            <h1 className='font-bold text-2xl text-center'>NO SUBSCRIPTION</h1>
+            <h1 className='font-bold text-2xl text-center text-white'>NO SUBSCRIPTION</h1>
           </div>
-          <p className=' pt-4 text-2xl text-left '>
+          <p className=' pt-4 text-2xl text-left text-white'>
             Experience premium music features without paying for subscriptions, offering a cost-effective solution for music lovers to enjoy high-quality music without financial
             obligations
           </p>

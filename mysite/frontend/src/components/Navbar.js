@@ -7,16 +7,16 @@ const Navbar = () => {
     const [navbar, setNavbar] = useState(false);
     const { user, logoutUser } = useContext(AuthContext);
     return (
-    <nav className="w-full bg-fuchsia-50 shadow">
+    <nav className="w-full bg-indigo-950 shadow">
     <div className="justify-between px-4 mx-auto lg:max-w-7xl lg:items-center lg:flex lg:px-8">
         <div>
             <div className="flex items-center justify-between py-3 lg:py-5 lg:block">
-            <Link to="/" className="pl-8 sm:text-base italic font-medium cursor-pointer relative ">
+            <Link to="/" className="pl-8 sm:text-base italic font-medium cursor-pointer relative text-white ">
                 <img src={twist} alt="juke icon" className="absolute w-7 ml-10 lg:ml-20" /> Juke
             </Link>
                 <div className="lg:hidden">
                     <button
-                        className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                        className="p-2 text-white rounded-md outline-none focus:border-white focus:border"
                         onClick={() => setNavbar(!navbar)}
                     >
                         {navbar ? (
@@ -59,35 +59,35 @@ const Navbar = () => {
                 }`}
             >
                 <ul className="items-center justify-center space-y-8 grid ml-14 lg:flex lg:space-x-6 lg:space-y-0 cursor-pointer">
-                    <li className="text-gray-600 ">
-                    <Link className="border-b-2 border-transparent hover:text-fuchsia-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-fuchsia-300 mx-1.5 sm:mx-6 text-base" to="/">
+                    <li className="text-white ">
+                    <Link className="border-b-2 border-transparent hover:text-indigo-800 transition-colors duration-300 transform dark:hover:text-white hover:border-indigo-300 mx-1.5 sm:mx-6 text-base" to="/">
                       Home
                     </Link>
                     </li>
-                    <li className="text-gray-600">
-                    <Link className="border-b-2 border-transparent hover:text-fuchsia-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-fuchsia-300 mx-1.5 sm:mx-6 text-base" to="/music">
+                    <li className="text-white">
+                    <Link className="border-b-2 border-transparent hover:text-indigo-800 transition-colors duration-300 transform dark:hover:text-white hover:border-indigo-300 mx-1.5 sm:mx-6 text-base" to="/music">
                       Music
                     </Link>
                     </li>
-                    <li className="text-gray-600">
-                    <Link className="border-b-2 border-transparent hover:text-fuchsia-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-fuchsia-300 mx-1.5 sm:mx-6 text-base" to="/about">
+                    <li className="text-white">
+                    <Link className="border-b-2 border-transparent hover:text-indigo-800 transition-colors duration-300 transform dark:hover:text-white hover:border-indigo-300 mx-1.5 sm:mx-6 text-base" to="/about">
                       About
                     </Link>
                     </li>
                     { user ? (
             <>
-         <div className='inline-flex sm:text-base pt-4 md:pt-0 lg:pl-48 lg:pr-16 '>
+         <div className='inline-flex sm:text-base pt-4 md:pt-0 lg:pl-48 lg:pr-16 text-white '>
                       Welcome <span className="ml-4"> {user.username} </span> 
                       
                     </div>
                     
-                    <p className="pl-0 py-6 cursor-pointer border-b-2 border-transparent hover:text-fuchsia-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-fuchsia-300"
+                    <p className="text-white pl-0 py-6 cursor-pointer border-b-2 border-transparent hover:text-indigo-800 transition-colors duration-300 transform dark:hover:text-white hover:border-indigo-300"
                     onClick={logoutUser}
                     >
                         Sign Out</p>
                     </>
         ) : (
-            <Link className='border-b-2 border-transparent hover:text-fuchsia-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-fuchsia-300 mx-1.5 sm:mx-6 text-base' to='/login'>
+            <Link className='border-b-2 text-white border-transparent hover:text-indigo-800 transition-colors duration-300 transform dark:hover:text-white hover:border-indigo-300 mx-1.5 sm:mx-6 text-base' to='/login'>
                       Log in
                     </Link>
         )

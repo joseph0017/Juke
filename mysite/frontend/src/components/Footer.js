@@ -1,13 +1,13 @@
 const Footer = () => {
   return (
-    <footer className='bg-fuchsia-200 dark:bg-gray-900 mt-auto'>
+    <footer className='bg-indigo-950 dark:bg-gray-900 mt-auto'>
       <div className='container flex justify-center p-6 space-y-4 sm:space-y-0 sm:flex-row'>
-        <p className='text-sm text-gray-600 dark:text-gray-300'>
+        <p className='text-sm text-white dark:text-gray-300'>
           ©
           {new Date().getFullYear()} JUKE. ALX
         </p>
         <div className='flex -mx-2'>
-          <a href='https://github.com/joseph0017/juke' className='mx-2 ml-10 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400'
+          <a href='https://github.com/joseph0017/juke' className='mx-2 bg-white ml-10 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400'
             aria-label='Github'>
             <svg
               className='w-5 h-5 fill-current'
