@@ -19,7 +19,7 @@ const Hero = () => {
     <div className='container px-6 py-16 mx-auto relative'>
       
       <div className='items-center lg:flex'>
-        <div className='w-full lg:w-1/2'>
+        <div className='w-full lg:w-1/2 lg:ml-8'>
           <div className='lg:max-w-lg'>
             <h1 className='text-4xl font-semibold text-white dark:text-white md:text-5xl'>DISCOVER A NEW WORLD <br /><span className='text-violet-500 '>Juke</span></h1>
             <br />
