@@ -6,7 +6,7 @@ const Footer = () => {
           ©
           {new Date().getFullYear()} JUKE. ALX
         </p>
-        <div className='flex -mx-2'>
+        <div className='flex -mx-2' style={{margin: 0}}>
           <a href='https://github.com/joseph0017/juke' className='mx-2 bg-white ml-10 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400'
             aria-label='Github'>
             <svg

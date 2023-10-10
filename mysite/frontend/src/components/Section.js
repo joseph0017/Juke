@@ -14,7 +14,7 @@ const Section = () => {
             </div>
             <h1 className='font-bold text-2xl font-sans text-center text-white'>PLAY MUSIC</h1>
           </div>
-          <p className=' pt-4 font-sans text-2xl  text-left text-white'>
+          <p className=' pt-4 font-sans text-xl  text-left text-white'>
             Dive into a world of instant musical enjoyment as you effortlessly access and indulge in your favorite tracks anytime, anywhere.
           </p>
         </div>
@@ -26,7 +26,7 @@ const Section = () => {
             </div>
             <h1 className='font-bold text-2xl text-center text-white'>MUSIC RECOMMENDATION</h1>
           </div>
-          <p className=' pt-4 text-2xl  text-left text-white'>
+          <p className=' pt-4 text-xl  text-left text-white'>
             Discover personalized music suggestions tailored to your unique taste, expanding your musical horizons and introducing you to new songs, artists, and playlists that
             resonate with you.
           </p>
@@ -39,7 +39,7 @@ const Section = () => {
             </div>
             <h1 className='font-bold text-2xl text-center text-white'>NO SUBSCRIPTION</h1>
           </div>
-          <p className=' pt-4 text-2xl text-left text-white'>
+          <p className=' pt-4 text-xl text-left text-white'>
             Experience premium music features without paying for subscriptions, offering a cost-effective solution for music lovers to enjoy high-quality music without financial
             obligations
           </p>

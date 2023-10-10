@@ -58,7 +58,7 @@ const Navbar = () => {
                     navbar ? "block" : "hidden"
                 }`}
             >
-                <ul className="items-center justify-center space-y-8 grid ml-14 lg:flex lg:space-x-6 lg:space-y-0 cursor-pointer">
+                <ul className="items-center justify-center space-y-8 grid lg:flex lg:space-x-6 lg:space-y-0 cursor-pointer">
                     <li className="text-white ">
                     <Link className="border-b-2 border-transparent hover:text-indigo-800 transition-colors duration-300 transform dark:hover:text-white hover:border-indigo-300 mx-1.5 sm:mx-6 text-base" to="/">
                       Home

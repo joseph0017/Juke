@@ -21,9 +21,9 @@ const Hero = () => {
       <div className='items-center lg:flex'>
         <div className='w-full lg:w-1/2'>
           <div className='lg:max-w-lg'>
-            <h1 className='text-4xl font-semibold text-white dark:text-white md:text-7xl'>DISCOVER A NEW WORLD <br /><span className='text-violet-500 '>Juke</span></h1>
+            <h1 className='text-4xl font-semibold text-white dark:text-white md:text-5xl'>DISCOVER A NEW WORLD <br /><span className='text-violet-500 '>Juke</span></h1>
             <br />
-            <p className='mt-3 text-white leading-9 md:text-2xl md:tracking-wide'>
+            <p className='mt-3 text-white leading-9 md:text-xl md:tracking-wide'>
               Unleash the power of our state-of-the-art Recommendation System to explore music tailored to your taste, creating a personalized musical journey
             </p>
             <Link to='/music'>
