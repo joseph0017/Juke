@@ -20,3 +20,123 @@ def promptfunc(songfeed):
     """
 
     return prompt_recommend
+
+
+def happy(songfeed):
+
+    prompt_recommend = f"""
+    Given a users song feed, use the semantic meaning \
+    from the titles and the genres of the song feed \
+    to recommend 3 songs from it that suits \
+    the happy mood of the user.
+
+    The sond feed is delimited by triple backticks\
+    ```{songfeed}```
+
+    The output should be in json format.
+    no block brackets at both end
+
+    Do not use a number as key eg '1','2'.\
+
+    Just give me a json with the 3 songs
+    Do not remove any key-value pair from the original \
+    song feed.
+    """
+
+    return prompt_recommend
+
+
+def sad(songfeed):
+
+    prompt_recommend = f"""
+    Given a users song feed, use the semantic meaning \
+    from the titles and the genres of the song feed \
+    to recommend 3 songs from it that suits \
+    the sad mood of the user.
+
+    The sond feed is delimited by triple backticks\
+    ```{songfeed}```
+
+    The output should be in json format.
+    no block brackets at both end
+
+    Do not use a number as key eg '1','2'.\
+
+    Just give me a json with the 3 songs
+    Do not remove any key-value pair from the original \
+    song feed.
+    """
+
+    return prompt_recommend
+
+
+def moody(songfeed):
+
+    prompt_recommend = f"""
+    Given a users song feed, use the semantic meaning \
+    from the titles and the genres of the song feed \
+    to recommend 3 songs from it that suits \
+    the moody mood of the user.
+
+    The sond feed is delimited by triple backticks\
+    ```{songfeed}```
+
+    The output should be in json format.
+    no block brackets at both end
+
+    Do not use a number as key eg '1','2'.\
+
+    Just give me a json with the 3 songs
+    Do not remove any key-value pair from the original \
+    song feed.
+    """
+
+    return prompt_recommend
+
+
+def joyful(songfeed):
+
+    prompt_recommend = f"""
+    Given a users song feed, use the semantic meaning \
+    from the titles and the genres of the song feed \
+    to recommend 3 songs from it that suits \
+    the joyful mood of the user.
+
+    The sond feed is delimited by triple backticks\
+    ```{songfeed}```
+
+    The output should be in json format.
+    no block brackets at both end
+
+    Do not use a number as key eg '1','2'.\
+
+    Just give me a json with the 3 songs
+    Do not remove any key-value pair from the original \
+    song feed.
+    """
+
+    return prompt_recommend
+
+    
+def sleepy(songfeed):
+
+    prompt_recommend = f"""
+    Given a users song feed, use the semantic meaning \
+    from the titles and the genres of the song feed \
+    to recommend 3 songs from it that suits \
+    the sleepy mood of the user.
+
+    The sond feed is delimited by triple backticks\
+    ```{songfeed}```
+
+    The output should be in json format.
+    no block brackets at both end
+
+    Do not use a number as key eg '1','2'.\
+
+    Just give me a json with the 3 songs
+    Do not remove any key-value pair from the original \
+    song feed.
+    """
+
+    return prompt_recommend

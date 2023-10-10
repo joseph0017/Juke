@@ -10,7 +10,7 @@ from rest_framework import generics, status
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
 import json
-from .prompts import promptfunc
+from .prompts import promptfunc, happy, moody, sad, joyful, sleepy
 from .utils import querySongs, preparesongs, get_completion
 
 # Create your views here.
@@ -67,28 +67,69 @@ def recommendations(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def happy(request):
-    pass
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = happy(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
+
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def sad(request):
-    pass
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = sad(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def moody(request):
-    pass
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = moody(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def joyful(request):
-    pass
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = joyful(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def sleepy(request):
-    pass
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = sleepy(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
