@@ -10,7 +10,7 @@ from rest_framework import generics, status
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
 import json
-from .prompts import promptfunc
+from .prompts import promptfunc, happy_prompt, moody_prompt, sad_prompt, joyful_prompt, sleepy_prompt
 from .utils import querySongs, preparesongs, get_completion
 
 # Create your views here.
@@ -46,7 +46,13 @@ def getRoutes(request):
     routes = [
         '/jukeapi/token/',
         '/jukeapi/register/',
-        '/jukeapi/token/refresh/'
+        '/jukeapi/token/refresh/',
+        '/jukeapi/recommendations/',
+        '/jukeapi/happy/',
+        '/jukeapi/sad/',
+        '/jukeapi/moody/',
+        '/jukeapi/joyful/',
+        '/jukeapi/sleepy/'
     ]
     return Response(routes)
 
@@ -62,3 +68,74 @@ def recommendations(request):
     result = json.loads(result)
   
     return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def happy(request):
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = happy_prompt(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def sad(request):
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = sad_prompt(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def moody(request):
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = moody_prompt(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def joyful(request):
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = joyful_prompt(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def sleepy(request):
+    res = querySongs()
+    songs = preparesongs(res)
+
+    prompt = sleepy_prompt(songfeed=songs)
+    result = get_completion(prompt=prompt)
+
+    result = json.loads(result)
+  
+    return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
+

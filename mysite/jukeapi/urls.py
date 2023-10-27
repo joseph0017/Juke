@@ -13,5 +13,11 @@ urlpatterns = [
     path('register/', views.RegisterView.as_view(), name='auth_register'),
     path('test/', views.test_endpoint, name='test_endpoint'),
     path('', views.getRoutes),
-    path('recommendations', views.recommendations, name='recommender')
+    path('recommendations', views.recommendations, name='recommender'),
+    path('happy', views.happy, name='happy_mood' ),
+    path('sad', views.sad, name='sad_mood'),
+    path('moody', views.moody, name="moody_mood"),
+    path('joyful', views.joyful, name='joyful_mood'),
+    path('sleepy', views.sleepy, name='sleepy_mood')
 ]
+
