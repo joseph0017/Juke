@@ -16,7 +16,7 @@ urlpatterns = [
     path('recommendations', views.recommendations, name='recommender'),
     path('happy', views.happy, name='happy_mood' ),
     path('sad', views.sad, name='sad_mood'),
-    path('moody', views.mood, name="moody_mood"),
+    path('moody', views.moody, name="moody_mood"),
     path('joyful', views.joyful, name='joyful_mood'),
     path('sleepy', views.sleepy, name='sleepy_mood')
 ]

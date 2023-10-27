@@ -10,7 +10,7 @@ from rest_framework import generics, status
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
 import json
-from .prompts import promptfunc, happy, moody, sad, joyful, sleepy
+from .prompts import promptfunc, happy_prompt, moody_prompt, sad_prompt, joyful_prompt, sleepy_prompt
 from .utils import querySongs, preparesongs, get_completion
 
 # Create your views here.
@@ -46,7 +46,13 @@ def getRoutes(request):
     routes = [
         '/jukeapi/token/',
         '/jukeapi/register/',
-        '/jukeapi/token/refresh/'
+        '/jukeapi/token/refresh/',
+        '/jukeapi/recommendations/',
+        '/jukeapi/happy/',
+        '/jukeapi/sad/',
+        '/jukeapi/moody/',
+        '/jukeapi/joyful/',
+        '/jukeapi/sleepy/'
     ]
     return Response(routes)
 
@@ -70,7 +76,7 @@ def happy(request):
     res = querySongs()
     songs = preparesongs(res)
 
-    prompt = happy(songfeed=songs)
+    prompt = happy_prompt(songfeed=songs)
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)
@@ -84,7 +90,7 @@ def sad(request):
     res = querySongs()
     songs = preparesongs(res)
 
-    prompt = sad(songfeed=songs)
+    prompt = sad_prompt(songfeed=songs)
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)
@@ -98,7 +104,7 @@ def moody(request):
     res = querySongs()
     songs = preparesongs(res)
 
-    prompt = moody(songfeed=songs)
+    prompt = moody_prompt(songfeed=songs)
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)
@@ -112,7 +118,7 @@ def joyful(request):
     res = querySongs()
     songs = preparesongs(res)
 
-    prompt = joyful(songfeed=songs)
+    prompt = joyful_prompt(songfeed=songs)
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)
@@ -126,7 +132,7 @@ def sleepy(request):
     res = querySongs()
     songs = preparesongs(res)
 
-    prompt = sleepy(songfeed=songs)
+    prompt = sleepy_prompt(songfeed=songs)
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)

@@ -22,7 +22,7 @@ def promptfunc(songfeed):
     return prompt_recommend
 
 
-def happy(songfeed):
+def happy_prompt(songfeed):
 
     prompt_recommend = f"""
     Given a users song feed, use the semantic meaning \
@@ -46,7 +46,7 @@ def happy(songfeed):
     return prompt_recommend
 
 
-def sad(songfeed):
+def sad_prompt(songfeed):
 
     prompt_recommend = f"""
     Given a users song feed, use the semantic meaning \
@@ -70,7 +70,7 @@ def sad(songfeed):
     return prompt_recommend
 
 
-def moody(songfeed):
+def moody_prompt(songfeed):
 
     prompt_recommend = f"""
     Given a users song feed, use the semantic meaning \
@@ -94,7 +94,7 @@ def moody(songfeed):
     return prompt_recommend
 
 
-def joyful(songfeed):
+def joyful_prompt(songfeed):
 
     prompt_recommend = f"""
     Given a users song feed, use the semantic meaning \
@@ -118,7 +118,7 @@ def joyful(songfeed):
     return prompt_recommend
 
     
-def sleepy(songfeed):
+def sleepy_prompt(songfeed):
 
     prompt_recommend = f"""
     Given a users song feed, use the semantic meaning \
