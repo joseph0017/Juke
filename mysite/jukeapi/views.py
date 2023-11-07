@@ -1,5 +1,7 @@
 # api/views.py
 """create views for jukeapi"""
+import json
+import random
 from django.shortcuts import render
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
@@ -9,7 +11,6 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import generics, status
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
-import json
 from .prompts import promptfunc, happy_prompt, moody_prompt, sad_prompt, joyful_prompt, sleepy_prompt
 from .utils import querySongs, preparesongs, get_completion
 
@@ -66,12 +67,15 @@ def recommendations(request):
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)
+
+    list_of_songs = result["songs"]
+    random.shuffle(list_of_songs)
+    result["songs"] = list_of_songs
   
     return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def happy(request):
     res = querySongs()
     songs = preparesongs(res)
@@ -80,12 +84,16 @@ def happy(request):
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)
-  
+
+    list_of_songs = result["songs"]
+    random.shuffle(list_of_songs)
+    result["songs"] = list_of_songs
+    # print(type(result))
+    
     return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def sad(request):
     res = querySongs()
     songs = preparesongs(res)
@@ -94,12 +102,15 @@ def sad(request):
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)
+
+    list_of_songs = result["songs"]
+    random.shuffle(list_of_songs)
+    result["songs"] = list_of_songs
   
     return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def moody(request):
     res = querySongs()
     songs = preparesongs(res)
@@ -108,12 +119,15 @@ def moody(request):
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)
+
+    list_of_songs = result["songs"]
+    random.shuffle(list_of_songs)
+    result["songs"] = list_of_songs
   
     return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def joyful(request):
     res = querySongs()
     songs = preparesongs(res)
@@ -122,12 +136,15 @@ def joyful(request):
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)
+
+    list_of_songs = result["songs"]
+    random.shuffle(list_of_songs)
+    result["songs"] = list_of_songs
   
     return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def sleepy(request):
     res = querySongs()
     songs = preparesongs(res)
@@ -136,6 +153,10 @@ def sleepy(request):
     result = get_completion(prompt=prompt)
 
     result = json.loads(result)
+
+    list_of_songs = result["songs"]
+    random.shuffle(list_of_songs)
+    result["songs"] = list_of_songs
   
     return JsonResponse(result, safe=False, status=status.HTTP_200_OK)
 
